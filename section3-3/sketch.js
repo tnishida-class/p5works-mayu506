@@ -4,13 +4,8 @@ function setup(){
   calendar(2019, 10);
 
   for(let i = 2000; i <= 2100; i++){
-    if(isLeapYear(i)){
-      console.log(i + "年はうるう年です");
-    }
-    else{
-      console.log(i + "年はうるう年ではありません");
-    }
-  }
+    console.log(i + "年は" + daysInYear(i) + "日です。");
+}
 }
 
 function calendar(y, m){
@@ -25,7 +20,14 @@ function isLeapYear(y){
 }
 
 function daysInYear(y){
-  // BLANK[1]
+  let days;
+  if(isLeapYear(y)){
+    days = 366;
+  }
+  else {
+    days = 365;
+  }
+  return days;
 }
 
 function daysInMonth(y, m){
@@ -50,9 +52,4 @@ function dayOfYear(y, m, d){
 
 function dayOfWeek(y, m, d){
   // BLANK[2]
-}
-
-function dayOfWeekAsString(dow){
-  const a = ["日", "月", "火", "水", "木", "金", "土", "日"];
-  return a[dow];
 }
